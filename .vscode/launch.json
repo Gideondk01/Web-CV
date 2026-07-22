@@ -11,7 +11,8 @@
             "request": "launch",
             "type": "msedge",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "Run local server"
         },
         {
             "name": "Attach to Edge",
@@ -25,7 +26,8 @@
             "request": "launch",
             "name": "Launch Integrated Browser against localhost",
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "Run local server"
         }
     ]
 }

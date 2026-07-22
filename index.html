@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual CV | Your Name</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
       :root {
         --bg: #07111f;
@@ -102,6 +103,23 @@
     </style>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo">Your Name</a>
+        <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div id="mobileMenu" class="mobile-menu">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
     <div class="page">
       <header class="hero">
         <div>
@@ -163,6 +181,43 @@
         </div>
       </section>
 
+      <section class="section" id="about">
+        <h2>About Me</h2>
+        <p>I combine technical execution with a strong visual sense to create websites and applications that feel polished, intuitive, and impactful. I enjoy turning complex ideas into simple, engaging user journeys.</p>
+      </section>
+
+      <section class="section" id="experience">
+        <h2>Experience</h2>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>Senior Frontend Developer</h3>
+            <div class="meta">2022 — Present · Bright Studio</div>
+            <p>Led the development of customer-facing products, improved performance, and collaborated with design and product teams to ship features faster.</p>
+          </article>
+          <article class="card">
+            <h3>Web Designer</h3>
+            <div class="meta">2019 — 2022 · Pixel House</div>
+            <p>Designed and prototyped responsive experiences, optimized conversion flows, and supported marketing campaigns with high-quality visuals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <h2>Education</h2>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>BSc in Computer Science</h3>
+            <div class="meta">2015 — 2019 · University of Example</div>
+            <p>Focused on human-computer interaction, web technologies, and software engineering fundamentals.</p>
+          </article>
+          <article class="card">
+            <h3>UX Certification</h3>
+            <div class="meta">2020 · Design Academy</div>
+            <p>Built a practical foundation in user research, wireframing, and interaction design.</p>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="projects">
         <h2>Skills</h2>
         <ul class="skills">
@@ -190,6 +245,16 @@
           </article>
         </div>
       </section>
+
+      <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Interested in working together? Reach out by email or connect through LinkedIn.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:you@example.com">Email Me</a>
+          <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </section>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
