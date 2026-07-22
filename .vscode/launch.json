@@ -5,66 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to Edge",
-            "port": 9222,
-            "request": "attach",
-            "type": "msedge",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
             "name": "Launch Edge",
             "request": "launch",
-            "type": "msedge",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Launch Chrome",
-            "request": "launch",
-            "type": "chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "request": "attach",
-            "type": "chrome",
-            "webRoot": "${workspaceFolder}"
-        },
-        
-
-        {
-            "name": "Launch Edge",
-            "request": "launch",
-            "type": "pwa-chrome",
+            "type": "pwa-msedge",
             "runtimeExecutable": "msedge",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "Verify Edge and run server"
-        },
-        {
-            "name": "Launch Integrated Browser",
-            "request": "launch",
-            "type": "editor-browser",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}",
             "preLaunchTask": "Run local server"
         },
         {
             "name": "Attach to Edge",
-            "port": 9222,
             "request": "attach",
-            "type": "pwa-chrome",
+            "type": "pwa-msedge",
+            "port": 9222,
             "webRoot": "${workspaceFolder}"
-        },
-        {
-            "type": "editor-browser",
-            "request": "launch",
-            "name": "Launch Integrated Browser against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}",
-            "preLaunchTask": "Run local server"
         }
     ]
 }
