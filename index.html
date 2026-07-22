@@ -25,7 +25,7 @@
         line-height: 1.6;
       }
       a { color: var(--accent); text-decoration: none; }
-      .page { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      .page { max-width: 1240px; margin: 0 auto; padding: 24px; }
       .hero {
         display: grid;
         grid-template-columns: 1.3fr 0.7fr;
@@ -41,9 +41,9 @@
       .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
       .pill {
         padding: 8px 12px;
-        border: 1px solid var(--border);
+        border: 1px solid rgba(46,196,182,0.2);
         border-radius: 999px;
-        background: rgba(255,255,255,0.04);
+        background: rgba(46,196,182,0.14);
         color: var(--text);
         font-size: 0.92rem;
       }
@@ -56,18 +56,60 @@
       }
       .profile-card h3 { margin-top: 0; }
       .profile-card .info { margin-top: 12px; }
-      .section {
+      .content-layout {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 24px;
         margin-top: 24px;
-        background: rgba(13, 47, 47, 0.55);
+        align-items: start;
+      }
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .sidebar-card,
+      .section {
+        background: rgba(8, 31, 39, 0.95);
         border: none;
         border-radius: 20px;
         padding: 24px;
       }
-      .section h2 { margin-top: 0; font-size: 1.25rem; color: #ffffff; }
+      .section#experience {
+        background: rgba(10, 40, 50, 0.98);
+      }
+      .sidebar-card h3,
+      .section h2 { margin-top: 0; font-size: 1.2rem; color: #ffffff; }
+      .sidebar-card a {
+        display: block;
+        padding: 8px 0;
+        color: #dff7f0;
+      }
+      .snapshot-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .snapshot-list li {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        color: var(--muted);
+      }
+      .snapshot-list strong { color: #ffffff; }
+      .main-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .section p { color: var(--muted); }
       .grid { display: grid; gap: 16px; }
       .two-col { grid-template-columns: 1fr 1fr; }
       .card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(10, 50, 55, 0.75);
         border: none;
         border-radius: 16px;
         padding: 16px;
@@ -88,14 +130,17 @@
         padding: 10px 14px;
         border-radius: 999px;
         font-weight: 600;
-        border: 1px solid rgba(255,255,255,0.16);
-        background: rgba(255,255,255,0.09);
+        border: 1px solid rgba(46,196,182,0.24);
+        background: rgba(46,196,182,0.14);
         color: #ffffff;
       }
       .btn.primary {
         background: linear-gradient(135deg, var(--accent), var(--accent-2));
         color: white;
         border: none;
+      }
+      @media (max-width: 900px) {
+        .content-layout { grid-template-columns: 1fr; }
       }
       @media (max-width: 800px) {
         .hero { grid-template-columns: 1fr; }
@@ -145,116 +190,102 @@
         </aside>
       </header>
 
-      <section class="section">
-        <h2>About Me</h2>
-        <p>I combine technical execution with a strong visual sense to create websites and applications that feel polished, intuitive, and impactful. I enjoy turning complex ideas into simple, engaging user journeys.</p>
-      </section>
+      <div class="content-layout">
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <h3>Quick Snapshot</h3>
+            <ul class="snapshot-list">
+              <li><strong>Focus</strong><span>Designing polished web experiences</span></li>
+              <li><strong>Specialty</strong><span>Frontend and UI systems</span></li>
+              <li><strong>Approach</strong><span>Clean, accessible, and thoughtful</span></li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h3>Jump to</h3>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </aside>
 
-      <section class="section">
-        <h2>Experience</h2>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>Senior Frontend Developer</h3>
-            <div class="meta">2022 — Present · Bright Studio</div>
-            <p>Led the development of customer-facing products, improved performance, and collaborated with design and product teams to ship features faster.</p>
-          </article>
-          <article class="card">
-            <h3>Web Designer</h3>
-            <div class="meta">2019 — 2022 · Pixel House</div>
-            <p>Designed and prototyped responsive experiences, optimized conversion flows, and supported marketing campaigns with high-quality visuals.</p>
-          </article>
+        <div class="main-stack">
+          <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>I combine technical execution with a strong visual sense to create websites and applications that feel polished, intuitive, and impactful. I enjoy turning complex ideas into simple, engaging user journeys.</p>
+          </section>
+
+          <section class="section" id="experience">
+            <h2>Experience</h2>
+            <div class="grid two-col">
+              <article class="card">
+                <h3>Senior Frontend Developer</h3>
+                <div class="meta">2022 — Present · Bright Studio</div>
+                <p>Led the development of customer-facing products, improved performance, and collaborated with design and product teams to ship features faster.</p>
+              </article>
+              <article class="card">
+                <h3>Web Designer</h3>
+                <div class="meta">2019 — 2022 · Pixel House</div>
+                <p>Designed and prototyped responsive experiences, optimized conversion flows, and supported marketing campaigns with high-quality visuals.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="education">
+            <h2>Education</h2>
+            <div class="grid two-col">
+              <article class="card">
+                <h3>BSc in Computer Science</h3>
+                <div class="meta">2015 — 2019 · University of Example</div>
+                <p>Focused on human-computer interaction, web technologies, and software engineering fundamentals.</p>
+              </article>
+              <article class="card">
+                <h3>UX Certification</h3>
+                <div class="meta">2020 · Design Academy</div>
+                <p>Built a practical foundation in user research, wireframing, and interaction design.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="projects">
+            <h2>Skills</h2>
+            <ul class="skills">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Figma</li>
+              <li>Accessibility</li>
+              <li>Performance Optimization</li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2>Selected Projects</h2>
+            <div class="grid two-col">
+              <article class="card">
+                <h3>Portfolio Platform</h3>
+                <p>Built a responsive portfolio experience with immersive storytelling and smooth motion design.</p>
+              </article>
+              <article class="card">
+                <h3>Internal Dashboard</h3>
+                <p>Created a clean analytics dashboard that helped teams monitor product health and team performance.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="contact">
+            <h2>Contact</h2>
+            <p>Interested in working together? Reach out by email or connect through LinkedIn.</p>
+            <div class="actions">
+              <a class="btn primary" href="mailto:you@example.com">Email Me</a>
+              <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </section>
         </div>
-      </section>
-
-      <section class="section">
-        <h2>Education</h2>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>BSc in Computer Science</h3>
-            <div class="meta">2015 — 2019 · University of Example</div>
-            <p>Focused on human-computer interaction, web technologies, and software engineering fundamentals.</p>
-          </article>
-          <article class="card">
-            <h3>UX Certification</h3>
-            <div class="meta">2020 · Design Academy</div>
-            <p>Built a practical foundation in user research, wireframing, and interaction design.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="about">
-        <h2>About Me</h2>
-        <p>I combine technical execution with a strong visual sense to create websites and applications that feel polished, intuitive, and impactful. I enjoy turning complex ideas into simple, engaging user journeys.</p>
-      </section>
-
-      <section class="section" id="experience">
-        <h2>Experience</h2>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>Senior Frontend Developer</h3>
-            <div class="meta">2022 — Present · Bright Studio</div>
-            <p>Led the development of customer-facing products, improved performance, and collaborated with design and product teams to ship features faster.</p>
-          </article>
-          <article class="card">
-            <h3>Web Designer</h3>
-            <div class="meta">2019 — 2022 · Pixel House</div>
-            <p>Designed and prototyped responsive experiences, optimized conversion flows, and supported marketing campaigns with high-quality visuals.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="education">
-        <h2>Education</h2>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>BSc in Computer Science</h3>
-            <div class="meta">2015 — 2019 · University of Example</div>
-            <p>Focused on human-computer interaction, web technologies, and software engineering fundamentals.</p>
-          </article>
-          <article class="card">
-            <h3>UX Certification</h3>
-            <div class="meta">2020 · Design Academy</div>
-            <p>Built a practical foundation in user research, wireframing, and interaction design.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Figma</li>
-          <li>Accessibility</li>
-          <li>Performance Optimization</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Selected Projects</h2>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>Portfolio Platform</h3>
-            <p>Built a responsive portfolio experience with immersive storytelling and smooth motion design.</p>
-          </article>
-          <article class="card">
-            <h3>Internal Dashboard</h3>
-            <p>Created a clean analytics dashboard that helped teams monitor product health and team performance.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <h2>Contact</h2>
-        <p>Interested in working together? Reach out by email or connect through LinkedIn.</p>
-        <div class="actions">
-          <a class="btn primary" href="mailto:you@example.com">Email Me</a>
-          <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </section>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
