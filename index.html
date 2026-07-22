@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles.css" />
     <style>
       :root {
-        --bg: #071c1f;
-        --panel: #0d2f2f;
-        --panel-2: #123b3b;
+        --bg: #071f16;
+        --panel: #0c3d28;
+        --panel-2: #154936;
         --text: #e8f7f2;
-        --muted: #9fcfc2;
-        --accent: #2ec4b6;
-        --accent-2: #1f9d8a;
-        --border: rgba(255,255,255,0.14);
+        --muted: #b1d9b2;
+        --accent: #3ec475;
+        --accent-2: #2f8f4f;
+        --border: rgba(95,208,132,0.22);
       }
       * { box-sizing: border-box; }
       body {
@@ -30,8 +30,8 @@
         display: grid;
         grid-template-columns: 1.3fr 0.7fr;
         gap: 24px;
-        background: linear-gradient(135deg, rgba(13,47,47,0.95), rgba(18,59,59,0.85));
-        border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(135deg, rgba(12,54,38,0.96), rgba(17,69,43,0.87));
+        border: 1px solid rgba(95,208,132,0.22);
         border-radius: 24px;
         padding: 32px;
         box-shadow: 0 12px 30px rgba(0,0,0,0.18);
@@ -41,9 +41,9 @@
       .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
       .pill {
         padding: 8px 12px;
-        border: 1px solid rgba(46,196,182,0.2);
+        border: 1px solid rgba(62,196,117,0.28);
         border-radius: 999px;
-        background: rgba(46,196,182,0.14);
+        background: rgba(62,196,117,0.16);
         color: var(--text);
         font-size: 0.92rem;
       }
@@ -70,13 +70,13 @@
       }
       .sidebar-card,
       .section {
-        background: rgba(8, 31, 39, 0.95);
+        background: rgba(9, 47, 33, 0.96) !important;
         border: none;
         border-radius: 20px;
         padding: 24px;
       }
       .section#experience {
-        background: rgba(10, 40, 50, 0.98);
+        background: rgba(9, 54, 37, 0.98) !important;
       }
       .sidebar-card h3,
       .section h2 { margin-top: 0; font-size: 1.2rem; color: #ffffff; }
@@ -109,7 +109,7 @@
       .grid { display: grid; gap: 16px; }
       .two-col { grid-template-columns: 1fr 1fr; }
       .card {
-        background: rgba(10, 50, 55, 0.75);
+        background: rgba(15, 65, 45, 0.82);
         border: none;
         border-radius: 16px;
         padding: 16px;
@@ -118,10 +118,10 @@
       .card .meta { color: var(--accent); font-size: 0.92rem; margin-bottom: 8px; }
       .skills { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
       .skills li {
-        background: rgba(46,196,182,0.16);
+        background: rgba(62,196,117,0.16);
         padding: 8px 10px;
         border-radius: 999px;
-        color: #b9f5eb;
+        color: #d1f7de;
         font-size: 0.95rem;
       }
       .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
@@ -130,8 +130,8 @@
         padding: 10px 14px;
         border-radius: 999px;
         font-weight: 600;
-        border: 1px solid rgba(46,196,182,0.24);
-        background: rgba(46,196,182,0.14);
+        border: 1px solid rgba(62,196,117,0.24);
+        background: rgba(62,196,117,0.28);
         color: #ffffff;
       }
       .btn.primary {
