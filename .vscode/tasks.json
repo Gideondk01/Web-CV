@@ -42,6 +42,28 @@
                 "reveal": "always",
                 "panel": "dedicated"
             }
+        },
+        {
+            "label": "Start mobile tunnel",
+            "type": "shell",
+            "command": "npx",
+            "args": ["localtunnel", "--port", "8080"],
+            "isBackground": true,
+            "dependsOn": "Run local server",
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": ".^"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "your url is:"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
         }
     ]
 }
