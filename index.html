@@ -1,156 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - CV</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <h1 class="logo">John Doe</h1>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual CV | Your Name</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --panel: #0f172a;
+        --panel-2: #111c31;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+        --accent-2: #8b5cf6;
+        --border: rgba(255,255,255,0.12);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background: linear-gradient(135deg, var(--bg), #111827);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      .page { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 24px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+      }
+      .hero h1 { font-size: 2.4rem; margin: 0 0 10px; }
+      .hero p { color: var(--muted); margin: 0 0 16px; font-size: 1.05rem; }
+      .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+      .pill {
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        font-size: 0.92rem;
+      }
+      .profile-card {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        border-radius: 20px;
+        padding: 24px;
+        color: white;
+      }
+      .profile-card h3 { margin-top: 0; }
+      .profile-card .info { margin-top: 12px; }
+      .section {
+        margin-top: 24px;
+        background: rgba(15, 23, 42, 0.84);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+      }
+      .section h2 { margin-top: 0; font-size: 1.25rem; }
+      .grid { display: grid; gap: 16px; }
+      .two-col { grid-template-columns: 1fr 1fr; }
+      .card {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+      }
+      .card h3 { margin: 0 0 6px; font-size: 1rem; }
+      .card .meta { color: var(--accent); font-size: 0.92rem; margin-bottom: 8px; }
+      .skills { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+      .skills li {
+        background: rgba(56,189,248,0.16);
+        padding: 8px 10px;
+        border-radius: 999px;
+        color: #bae6fd;
+        font-size: 0.95rem;
+      }
+      .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+      .btn {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 600;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.06);
+        color: var(--text);
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        border: none;
+      }
+      @media (max-width: 800px) {
+        .hero { grid-template-columns: 1fr; }
+        .two-col { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <h1>Your Name</h1>
+          <p>Creative developer and problem-solver with a passion for building elegant digital experiences.</p>
+          <div class="pill-row">
+            <span class="pill">Frontend Development</span>
+            <span class="pill">UI/UX Design</span>
+            <span class="pill">Product Thinking</span>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:you@example.com">Contact Me</a>
+            <a class="btn" href="#projects">View Projects</a>
+          </div>
         </div>
-    </nav>
+        <aside class="profile-card">
+          <h3>Quick Profile</h3>
+          <div class="info">📍 Based in London, UK</div>
+          <div class="info">📧 you@example.com</div>
+          <div class="info">📱 +44 20 1234 5678</div>
+          <div class="info">🌐 linkedin.com/in/yourname</div>
+        </aside>
+      </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <section class="section">
+        <h2>About Me</h2>
+        <p>I combine technical execution with a strong visual sense to create websites and applications that feel polished, intuitive, and impactful. I enjoy turning complex ideas into simple, engaging user journeys.</p>
+      </section>
+
+      <section class="section">
+        <h2>Experience</h2>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>Senior Frontend Developer</h3>
+            <div class="meta">2022 — Present · Bright Studio</div>
+            <p>Led the development of customer-facing products, improved performance, and collaborated with design and product teams to ship features faster.</p>
+          </article>
+          <article class="card">
+            <h3>Web Designer</h3>
+            <div class="meta">2019 — 2022 · Pixel House</div>
+            <p>Designed and prototyped responsive experiences, optimized conversion flows, and supported marketing campaigns with high-quality visuals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Education</h2>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>BSc in Computer Science</h3>
+            <div class="meta">2015 — 2019 · University of Example</div>
+            <p>Focused on human-computer interaction, web technologies, and software engineering fundamentals.</p>
+          </article>
+          <article class="card">
+            <h3>UX Certification</h3>
+            <div class="meta">2020 · Design Academy</div>
+            <p>Built a practical foundation in user research, wireframing, and interaction design.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Figma</li>
+          <li>Accessibility</li>
+          <li>Performance Optimization</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Selected Projects</h2>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>Portfolio Platform</h3>
+            <p>Built a responsive portfolio experience with immersive storytelling and smooth motion design.</p>
+          </article>
+          <article class="card">
+            <h3>Internal Dashboard</h3>
+            <p>Created a clean analytics dashboard that helped teams monitor product health and team performance.</p>
+          </article>
+        </div>
+      </section>
     </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Full Stack Developer</h2>
-            <p>Building beautiful and functional web experiences</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h3>About Me</h3>
-            <p>
-                I'm a passionate developer with expertise in building modern web applications. 
-                With over 5 years of experience in frontend and backend development, I love 
-                turning ideas into reality through code.
-            </p>
-            <div class="skills">
-                <div class="skill-item">HTML & CSS</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">React</div>
-                <div class="skill-item">Node.js</div>
-                <div class="skill-item">Database Design</div>
-                <div class="skill-item">REST APIs</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h3>Experience</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>Senior Developer</h4>
-                    <p class="company">Tech Company Inc. • 2022 - Present</p>
-                    <p>Led development of customer-facing applications. Mentored junior developers and improved team productivity by 30%.</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Full Stack Developer</h4>
-                    <p class="company">StartUp Solutions • 2020 - 2022</p>
-                    <p>Built and maintained multiple web applications. Implemented new features and fixed critical bugs. Improved load time by 40%.</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Junior Developer</h4>
-                    <p class="company">Web Agency • 2018 - 2020</p>
-                    <p>Developed responsive websites for various clients. Learned modern web development practices and technologies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h3>Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h4>Project One</h4>
-                    <p>A full-stack web application built with React and Node.js featuring real-time data updates.</p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4>Project Two</h4>
-                    <p>E-commerce platform with payment integration and admin dashboard for inventory management.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>Express</span>
-                        <span>PostgreSQL</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-                <div class="project-card">
-                    <h4>Project Three</h4>
-                    <p>Mobile-responsive web design portfolio showcasing various design and development skills.</p>
-                    <div class="project-tags">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                        <span>Responsive</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h3>Let's Talk</h3>
-            <p>Feel free to reach out to me for collaboration or inquiries.</p>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:john@example.com">john@example.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-8900</a></p>
-                <div class="social-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">LinkedIn</a>
-                    <a href="#" target="_blank">Twitter</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 John Doe. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
