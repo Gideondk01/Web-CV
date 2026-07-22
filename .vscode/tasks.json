@@ -7,9 +7,39 @@
             "command": "python3",
             "args": ["-m", "http.server", "8080"],
             "isBackground": true,
-            "problemMatcher": [],
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": ".^"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Serving HTTP on"
+                }
+            },
             "presentation": {
                 "reveal": "silent",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Verify Edge and run server",
+            "type": "shell",
+            "command": "bash",
+            "args": ["-lc", "command -v msedge >/dev/null 2>&1 && echo 'Edge found.' && python3 -m http.server 8080"],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": ".^"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Serving HTTP on"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
                 "panel": "dedicated"
             }
         }
